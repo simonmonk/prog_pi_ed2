@@ -19,8 +19,7 @@ def play():
 			break
 
 def pick_a_word():
-	word_position = random.randint(0, len(words) - 1)
-	return words[word_position]
+	return random.choice(words)
 	
 def get_guess(word):
 	print_word_with_blanks(word)
