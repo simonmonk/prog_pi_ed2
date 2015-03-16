@@ -14,5 +14,6 @@ To install it onto your Raspberry Pi, issue the following commands:
 You will then find all the code in the directory: _prog_pi_ed2_
 
 From time to time, tehre may be updates to this code. To update your Raspberry Pi to the latest version, use the commands below:
+
     $cd /home/pi/prog_pi_ed2
     $git pull
