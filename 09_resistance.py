@@ -50,6 +50,11 @@ def read_resistance():
     r = (T / C) - R1
     return r
 
-while True:
-    print(read_resistance())
-    time.sleep(0.5)
+
+try:
+    while True:
+        print(read_resistance())
+        time.sleep(0.5)
+finally:  
+    print("Cleaning up")
+    GPIO.cleanup()
