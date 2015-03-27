@@ -1,19 +1,19 @@
 #09_pwm.py
 
 import RPi.GPIO as GPIO
-import time
-# Configure the Pi to use the BCM (Broadcom) pin names, rather than the pin pos$
+
+led_pin = 18
 GPIO.setmode(GPIO.BCM)
+GPIO.setup(led_pin, GPIO.OUT)
 
-switch_pin = 23
-
-GPIO.setup(switch_pin, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+pwm_led = GPIO.PWM(led_pin, 500)
+pwm_led.start(100)
 
 try:
     while True:
-        if GPIO.input(switch_pin) == False:
-            print("Button Pressed")
-            time.sleep(0.2)
+      duty_s = input("Enter Brightness (0 to 100):")
+      duty = int(duty_s)
+      pwm_led.ChangeDutyCycle(duty)
 finally:  
     print("Cleaning up")
     GPIO.cleanup()
