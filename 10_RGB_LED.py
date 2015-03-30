@@ -1,4 +1,4 @@
-# 03_rgb.py
+# 10_RGB_LED.py
 from Tkinter import *      
 import RPi.GPIO as GPIO
 import time
@@ -63,4 +63,8 @@ root = Tk()
 root.wm_title('RGB LED Control')
 app = App(root)
 root.geometry("200x150+0+0")
-root.mainloop()
+try:
+    root.mainloop()
+finally:  
+    print("Cleaning up")
+    GPIO.cleanup()
