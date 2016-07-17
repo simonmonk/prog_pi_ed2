@@ -1,5 +1,5 @@
 # 10_RGB_LED.py
-from Tkinter import *      
+from tkinter import *      
 import RPi.GPIO as GPIO
 import time
 
